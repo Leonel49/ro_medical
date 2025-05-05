@@ -7,14 +7,12 @@ $pacientes = getPacientes($conexion); // Traer todos los pacientes
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Pacientes</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-</head>
+
+<?php require('../views/_header.php'); ?>
+
 <body>
 
-<?php require('_navbar.php'); ?>
+<?php require('../views/_navbar.php'); ?>
 
 <div class="container mt-5">
     <h2 class="mb-4">Lista de Pacientes</h2>
@@ -48,10 +46,10 @@ $pacientes = getPacientes($conexion); // Traer todos los pacientes
         <div class="alert alert-info">No hay pacientes registrados.</div>
     <?php endif; ?>
 
-    <a href="index.php" class="btn btn-secondary mt-3">Volver al inicio</a>
+    <a href="../public/index.php" class="btn btn-secondary mt-3">Volver al inicio</a>
 </div>
 
-<?php require('_footer.php'); ?>
+<?php require('../views/_footer.php'); ?>
 
 </body>
 </html>

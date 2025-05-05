@@ -9,14 +9,16 @@ try{
 function addPaciente(PDO $conexion, $data)
 {
     $consulta = $conexion->prepare('
-        INSERT INTO pacientes (nombre, edad, direccion, telefono, foto)
-        VALUES (:nombre, :edad, :direccion, :telefono, :foto)
+        INSERT INTO pacientes (nombre, apellido, dni, direccion, email, estado, fecha_alta)
+        VALUES (:nombre, :apellido, :dni, :direccion, :email, :estado, :fecha_alta)
     ');
     $consulta->bindValue(':nombre', $data['nombre']);
-    $consulta->bindValue(':edad', $data['edad']);
+    $consulta->bindValue(':apellido', $data['apellido']);
+    $consulta->bindValue(':dni', $data['dni']);
     $consulta->bindValue(':direccion', $data['direccion']);
-    $consulta->bindValue(':telefono', $data['telefono']);
-    $consulta->bindValue(':foto', $data['foto']);
+    $consulta->bindValue(':email', $data['email']);
+    $consulta->bindValue(':estado', $data['estado']);
+    $consulta->bindValue(':fecha_alta', $data['fecha_alta']);
     $consulta->execute();
     
 }
