@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require('../views/_header.php') ?>
+<?php require_once('../views/_header.php') ?>
 
 <body>
-  <?php require('../views/_navbar.php') ?>
+  <?php require_once('../views/_navbar.php') ?>
   
 
   <div class="container mt-5">
@@ -59,7 +59,7 @@
 
 
   <?php require('../views/_footer.php') ?>
-
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 
 </html>

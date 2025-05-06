@@ -32,19 +32,31 @@ $pacientes = getPacientes($conexion); // Traer todos los pacientes
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($pacientes as $paciente): ?>
+                   <!--  < ?php foreach ($pacientes as $paciente): ?>
                         <tr>
-                            <td><?php echo $paciente['id']; ?></td>
-                            <td><?php echo $paciente['nombre']; ?></td>
-                            <td><?php echo $paciente['apellido']; ?></td>
-                            <td><?php echo $paciente['dni']; ?></td>
-                            <td><?php echo $paciente['direccion']; ?></td>
-                            <td><?php echo $paciente['email']; ?></td>
-                            <td><?php echo $paciente['estado']; ?></td>
-                            <td><?php echo $paciente['fecha_alta']; ?></td>
+                            <td>< ?php echo $paciente['id']; ?></td> 
+                            <td>< ?php echo $paciente['nombre']; ?></td>
+                            <td>< ?php echo $paciente['apellido']; ?></td>
+                            <td>< ?php echo $paciente['dni']; ?></td>
+                            <td>< ?php echo $paciente['direccion']; ?></td>
+                            <td>< ?php echo $paciente['email']; ?></td>
+                            <td>< ?php echo $paciente['estado']; ?></td>
+                            <td>< ?php echo $paciente['fecha_alta']; ?></td> 
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
+                    < ?php endforeach; ?>-->
+
+                    <tr>
+                            <td></td> 
+                            <td id="nombre"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td> 
+                        </tr>
+
+                </tbody> 
             </table>
 
         <?php else: ?>
@@ -56,6 +68,18 @@ $pacientes = getPacientes($conexion); // Traer todos los pacientes
 
     <?php require('../views/_footer.php'); ?>
 
+    <?php 
+    $nombre = "leonel";
+    echo $nombre."HTML";
+     ?>
+            <script>
+                // const pacientes = < ?php echo json_encode($pacientes); ?>
+                // console.log(pacientes)
+                const nombre = "<?php echo $nombre; ?>"
+
+                // document.getElementById("nombre").innerText = nombre
+                $("#nombre").text(nombre+" usando jquery")
+            </script>
 </body>
 
 </html>
