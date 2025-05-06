@@ -1,5 +1,4 @@
-<?php require('../controllers/pacientesController.php') ?>
-
+<?php require_once('../controllers/pacienteController.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,7 @@
       <?php endforeach ?>
     </ul>
 
-    <form id="formAgregarPaciente" class="m-3" enctype="multipart/form-data">
+    <form id="formAgregarPaciente" method="POST" class="m-3" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre</label>
         <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre ?? ''; ?>" required>

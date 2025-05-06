@@ -41,7 +41,9 @@ if (isset($_POST['submit'])) {
   if (empty($fecha_alta) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_alta)) {
     array_push($errores, 'Debe ingresar una fecha válida en formato YYYY-MM-DD.');
   }
-
+  
+  header('Content-Type: application/json');
+    
   if (count($errores) == 0) {
     // Insertar paciente
     addPaciente($conexion, array(
@@ -53,10 +55,13 @@ if (isset($_POST['submit'])) {
       'estado' => $estado,
       'fecha_alta' => $fecha_alta
     ));
-
-    header('Location: ../public/lista_pacientes.php');
-    exit;
+    echo json_encode(['success' => true]);
+    
+    
+  }else {
+    echo json_encode(['success' => false, 'errores' => $errores]);
   }
+  exit;
 }
 
 ?>
